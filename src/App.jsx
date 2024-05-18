@@ -1,13 +1,10 @@
-
-
+import Header from "./components/Header/Header"
+import Master from "./components/Master/Master"
 function App() {
-
-
   return (
     <>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+      <Header />
+      <Master />
     </>
   )
 }
