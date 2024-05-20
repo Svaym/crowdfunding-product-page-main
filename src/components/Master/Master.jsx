@@ -1,7 +1,16 @@
+import { useState } from "react";
 import Button from "../Button/Button"
 import { info } from "./data"
+import Modal from "../Modal/Modal";
 
 export default function Master() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <>
     <section className="">
@@ -11,7 +20,7 @@ export default function Master() {
           <h1 className="text-center font-bold text-3xl mt-5">Mastercraft Bamboo Monitor Riser</h1>
           <p className="font-light text-center text-neutral-500 mt-2">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
           <div className="flex items-center justify-between mt-6">
-            <Button backgroundColor='bg-moderateCyan'>Back this project</Button>
+            <Button onClick={openModal} backgroundColor='bg-moderateCyan'>Back this project</Button>
             <div className="bg-gray-100 rounded-full flex items-center gap-x-3 pr-5 cursor-pointer transition duration-300 ease-out hover:contrast-50">
               <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#2F2F2F" cx="28" cy="28" r="28"/><path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z"/></g></svg>
               <h2>Bookmark</h2>
@@ -79,12 +88,15 @@ export default function Master() {
                       </h4>
                       <span className="font-light text-neutral-500">left</span>
                     </div>
-                    <Button backgroundColor={'bg-moderateCyan'}>{item.btn}</Button>
+                    <Button onClick={openModal} backgroundColor={'bg-moderateCyan'}>{item.btn}</Button>
                   </div>
                 </div>
               </>
             ))}
           </div>
+        </div>
+        <div>
+          <Modal isOpen={isModalOpen} onClose={closeModal} />
         </div>
       </div>
     </section>
