@@ -28,7 +28,7 @@ export default {
         'hero-mobile': "url('/src/assets/image-hero-mobile.jpg')",
       },
       fontFamily: {
-        'pro': ['Be Vietnam Pro', 'sans-serif'],
+        'commissioner': ['Commissioner', 'sans-serif'],
       },
       animation: {
         'fade': 'fade .8s linear',

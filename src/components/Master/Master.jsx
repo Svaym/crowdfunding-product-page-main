@@ -73,7 +73,7 @@ export default function Master() {
           <div className="flex flex-col gap-y-4 mt-7">
             {info.map((item, id) => (
               <>
-                <div className={id===2 ? 'rounded-md border-2 border-gray-300 p-4 contrast-0 ' : 'rounded-md border-2 border-gray-300 p-4'}>
+                <div key={item.id} className={id===2 ? 'rounded-md border-2 border-gray-300 p-4 contrast-0 ' : 'rounded-md border-2 border-gray-300 p-4'}>
                   <div className="flex justify-between items-center">
                     <h4 className="font-bold">{item.title}</h4>
                     <h4 className="text-moderateCyan font-bold">{item.subtitle}</h4>

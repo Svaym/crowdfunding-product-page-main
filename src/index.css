@@ -3,7 +3,7 @@
 @tailwind utilities;
 @layer base {
   body {
-    @apply font-normal overflow-x-hidden bg-gray-200
+    @apply font-normal font-commissioner overflow-x-hidden bg-gray-200
   }
 }
 .container {

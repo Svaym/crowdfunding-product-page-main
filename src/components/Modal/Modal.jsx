@@ -1,13 +1,20 @@
 import { info } from "../Master/data";
 import Button from "../Button/Button";
 import { useEffect, useState } from "react";
+import ModalCompleted from "./ModalCompleted";
 
 export default function Modal({ isOpen, onClose }) {
+  // Модальное окно при успешной отправки суммы
+  const [isCompleted, setIsCompleted] = useState(false)
   const [option, setOption] = useState(null);
   //  Введенное число
   const [sum, setSum] = useState('')
-  function click() {
+  function openCompletedModal() {
+    setIsCompleted(true)
     setSum('')
+  }
+  function closeCompletedModal() {
+    setIsCompleted(false)
   }
   useEffect(() => {
     if (isOpen) {
@@ -87,7 +94,7 @@ export default function Modal({ isOpen, onClose }) {
                           value={sum}
                           onChange={(eve) => setSum(eve.target.value)}
                         />
-                        <Button onClick={click} backgroundColor={"bg-moderateCyan"}>
+                        <Button onClick={openCompletedModal} backgroundColor={"bg-moderateCyan"}>
                           Continue
                         </Button>
                       </div>
@@ -98,6 +105,7 @@ export default function Modal({ isOpen, onClose }) {
             ))}
           </div>
         </div>
+        {isCompleted && <ModalCompleted isCompletedOpen={openCompletedModal} isCompletedClose={closeCompletedModal} />}
       </div>
     </>
   );
