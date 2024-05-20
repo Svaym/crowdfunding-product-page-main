@@ -33,8 +33,8 @@ export default function Modal({ isOpen, onClose }) {
         onClick={onClose}
         className="fixed inset-0 bg-gray-800 bg-opacity-75 z-10"
       ></div>
-      <div className="flex justify-center fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 animate-fade-in">
-        <div className="bg-white w-full p-5 h-[30rem] overflow-y-scroll rounded-md">
+      <div className="flex justify-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 animate-fade-in w-3/5 md:w-4/5 xs:w-[90%] xxs:w-[95%]">
+        <div className="bg-white p-5 h-[30rem] overflow-y-scroll rounded-md">
           <button onClick={onClose}>
             <svg width="15" height="15" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -58,18 +58,18 @@ export default function Modal({ isOpen, onClose }) {
                   onClick={() => setOption(id)}
                   className={
                     id === 2
-                      ? "rounded-md border-2 border-gray-300 p-4 contrast-0 "
+                      ? "rounded-md border-2 border-gray-300 p-2 contrast-0 "
                       : option === id
-                      ? "rounded-md border-2 border-moderateCyan p-4 cursor-pointer animate-slide-in-top"
-                      : "rounded-md border-2 border-gray-300 p-4 transition duration-300 ease-in-out cursor-pointer hover:brightness-125"
+                      ? "rounded-md border-2 border-moderateCyan p-2 cursor-pointer animate-slide-in-top"
+                      : "rounded-md border-2 border-gray-300 p-2 transition duration-300 ease-in-out cursor-pointer hover:brightness-125"
                   }
                 >
                   <div className="flex justify-between items-center">
-                    <div className="flex items-center gap-x-3">
-                      <h4 className="font-bold text-lg transition-colors duration-300 ease-in-out cursor-pointer hover:text-moderateCyan">
+                    <div className="flex items-center gap-x-3 lg:flex-col lg:items-start">
+                      <h4 className="font-bold text-lg transition-colors duration-300 ease-in-out cursor-pointer hover:text-moderateCyan md:text-base">
                         {item.title}
                       </h4>
-                      <h4 className="text-moderateCyan font-bold text-lg">
+                      <h4 className="text-moderateCyan font-bold text-lg md:text-base">
                         {item.subtitle}
                       </h4>
                     </div>
@@ -78,11 +78,11 @@ export default function Modal({ isOpen, onClose }) {
                       <span className="font-light text-neutral-500">left</span>
                     </div>
                   </div>
-                  <p className="font-light text-neutral-500 my-5">
+                  <p className="font-light text-neutral-500 my-5 md:my-3 xxs:text-[15px]">
                     {item.description}
                   </p>
                   {(option===id && id!==2) &&
-                    <div className="flex items-center justify-between animate-zoom-in">
+                    <div className="flex items-center justify-between animate-zoom-in md:flex-col md:gap-y-2">
                       <h4 className="font-light text-neutral-500">
                         Enter your pledge
                       </h4>
